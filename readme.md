@@ -16,10 +16,10 @@
 
 ### 下载方法
 1. 点击最新提交
-![alt text](imagea1.png)
+![alt text](imgs/imagea1.png)
 
 2. 点击这里下载最新的zip
-![alt text](imagea2.png)
+![alt text](imgs/imagea2.png)
 
 你也可以继续使用clone的方式进行同步。
 ```bash
