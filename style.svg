@@ -139,9 +139,12 @@
 
     <div class="container-bg">
       <div class="title">
-        <h1 class="move">InjectLib</h1>
-        <h2>macOS集成注入框架</h2>
-        <h3 class="user">Creative By QiuChenly</h3>
+        <h1 class="move">CoreInject</h1>
+        <h2>macOS/iOS 集成注入框架</h2>
+        <h3 class="user">QiuChenly</h3>
+        <span>
+        For <strong>My iPhone 16 Pro</strong>  
+        </span><br/>
         <span>
         For <strong>My MacBook Pro 16</strong>  
         </span>
