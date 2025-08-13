@@ -30,7 +30,7 @@ iOS 12.0+
 
 |App|状态|说明|
 |-|-|-|
-|Infuse|支持 8.1.9 以及后续所有版本|自签无法使用iCloud同步 https://t.me/qiuchenlymac/738|
+|Infuse|支持 8.2.2 以及后续所有版本|自签无法使用iCloud同步 https://t.me/qiuchenlymac/793|
 
 部分ipa提供了注入好的ipa包，下载即可安装。请访问：https://t.me/qiuchenlymac 查看更多细节。
 
