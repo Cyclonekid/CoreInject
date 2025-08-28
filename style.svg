@@ -33,79 +33,176 @@
     @keyframes fadeIn {
       0% {
         opacity: 0;
-      }
-      66% {
-        opacity: 0;
+        transform: translateY(20px);
       }
       100% {
         opacity: 1;
+        transform: translateY(0);
       }
     }
 
     @keyframes logo-fade {
       0% {
         opacity: 1;
+        transform: scale(1);
       }
       50% {
-        opacity: 0.35;
+        opacity: 0.6;
+        transform: scale(0.95);
       }
       100% {
         opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
       }
     }
 
     .container-bg {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
-        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       margin: 0;
       width: 100%;
-      background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
-      background-size: 600% 400%;
-      animation: gradientBackground 10s ease infinite;
-      border-radius: 10px;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+      background-size: 400% 400%;
+      animation: gradientBackground 8s ease infinite;
+      border-radius: 20px;
       color: white;
       text-align: center;
-      padding-bottom:40px;
+      padding: 40px 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      pointer-events: none;
     }
 
     .move {
-      font-size: 50px;
-      line-height: 1.3;
-      letter-spacing: 5px;
-      animation: rotate ease-in-out 1s infinite alternate;
+      font-size: 56px;
+      line-height: 1.2;
+      letter-spacing: 8px;
+      animation: rotate ease-in-out 2s infinite alternate;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
     }
 
     .user {
-      font-size: 20px;
-      text-shadow: 0 1px 0 #efefef;
+      font-size: 22px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       animation: 6s ease 2s normal forwards infinite logo-fade;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .specs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .spec-item {
+      font-size: 14px;
+      opacity: 0.8;
+      animation: fadeIn 0.8s ease-out forwards;
     }
 
     .logo {
       animation: 6s ease-in-out 2s normal forwards infinite logo-fade;
     }
+    
     .logo-s {
       margin-bottom: 40px;
       margin-left: 50%;
       transform: translateX(-50%);
       display: flex;
       width: 100%;
-      height: 200px;
+      height: 220px;
       justify-content: center;
       align-items: center;
-      padding: 20px 0 ;
-      
+      padding: 30px 0;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
 
-      background-color: #000;
-      border-radius: 10px;
+    .logo-s::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+      animation: float 6s ease-in-out infinite;
     }
 
     .logo-s #apple {
       animation: 6s ease 2s normal forwards infinite logo-fade;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+
+    .title {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .title h2 {
+      font-size: 24px;
+      margin: 15px 0;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    .title h3 {
+      margin: 10px 0;
+    }
+
+    .title span {
+      display: block;
+      margin: 8px 0;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .title div {
+      margin-top: 15px;
+      font-size: 14px;
+      opacity: 0.7;
+      font-family: 'Monaco', 'Menlo', monospace;
+      background: rgba(0,0,0,0.2);
+      padding: 8px 16px;
+      border-radius: 8px;
+      display: inline-block;
     }
   </style>
   <div class="container">
@@ -140,20 +237,16 @@
     <div class="container-bg">
       <div class="title">
         <h1 class="move">CoreInject</h1>
-        <h2>macOS/iOS 集成注入框架</h2>
+        <h2 class="subtitle">macOS/iOS 集成注入框架</h2>
         <h3 class="user">QiuChenly</h3>
-        <span>
-        For <strong>My iPhone 16 Pro</strong>  
-        </span><br/>
-        <span>
-        For <strong>My MacBook Pro 16</strong>  
-        </span>
-      <div>i9-9980HK Max 5.0Ghz</div>
+        <span>For <strong>My iPhone 16 Pro</strong></span>
+        <span>For <strong>My MacBook Pro 16</strong></span>
+        <div class="specs">
+          <div class="spec-item">i9-9980HK Max 5.0Ghz</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
   </foreignObject>
 </svg>
